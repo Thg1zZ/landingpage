@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dev Portfolio</title>
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo"><span>//</span> DEV<span>.portfolio</span></div>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about"     data-i18n="nav_about">Sobre</a></li>
+    <li><a href="#education"   data-i18n="nav_edu">Formação</a></li>
+    <li><a href="#experience"  data-i18n="nav_exp">Experiência</a></li>
+    <li><a href="#projects"   data-i18n="nav_proj">Projetos</a></li>
+    <li><a href="#contact"   data-i18n="nav_contact">Contato</a></li>
+  </ul>
+  <div class="nav-controls">
+    <button class="btn-ctrl" id="langBtn"  onclick="toggleLang()">EN</button>
+    <button class="btn-ctrl" id="themeBtn" onclick="toggleTheme()">☀</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="scroll-progress" id="scrollProgress"></div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero" id="home">
+
+  <!-- VIDEO -->
+  <div class="hero-video-wrap">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="assets/bgvideo.mp4" type="video/mp4">
+    </video>
+  </div>
+
+  <!-- OVERLAYS -->
+  <div class="hero-overlay"></div>
+  <div class="hero-fade-bottom"></div>
+
+  <!-- BADGES — top-right, fora do centro do vídeo -->
+  <div class="hero-badges">
+    <span class="badge">⚙ C / C++</span>
+    <span class="badge">☕ Java</span>
+    <span class="badge">🌐 HTML · CSS · JS</span>
+    <span class="badge">📊 Power BI</span>
+    <span class="badge">🤖 IA · LLM API</span>
+    <span class="badge">🏗 Software Engineering</span>
+  </div>
+
+  <!-- CONTENT — barra inferior, não sobrepõe o centro do vídeo -->
+  <div class="hero-content">
+    <div class="hero-content-left">
+      <div class="hero-tag" data-i18n="hero_tag">Disponível para projetos</div>
+      <h1 class="hero-name">Thiago Gomes</h1>
+      <p class="hero-role" data-i18n="hero_role">Full-Stack Engineer</p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn-primary"   data-i18n="hero_btn1">Ver Projetos</a>
+        <a href="#contact"  class="btn-secondary" data-i18n="hero_btn2">Entrar em Contato</a>
+      </div>
+    </div>
+    <div class="hero-content-right">
+      <p class="hero-desc" data-i18n="hero_desc">Engenheiro de software com sólida experiência em desenvolvimento de sistemas, análise de dados e implementação de soluções com Inteligência Artificial. Transformando complexidade em código limpo e resultados reais.</p>
+      <div class="hero-stats">
+        <div class="stat-item"><span class="stat-num">3+</span><span class="stat-label" data-i18n="stat1">Anos de Exp.</span></div>
+        <div class="stat-item"><span class="stat-num">20+</span><span class="stat-label" data-i18n="stat2">Projetos</span></div>
+        <div class="stat-item"><span class="stat-num">8</span><span class="stat-label" data-i18n="stat3">Tecnologias</span></div>
+        <div class="stat-item"><span class="stat-num">3</span><span class="stat-label" data-i18n="stat4">Certificações</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-hint"><span class="line"></span><span data-i18n="scroll_hint">scroll</span></div>
+
+</section>
+
+<!-- ══ ABOUT ══ -->
+<section id="about" style="border-top:1px solid var(--border)">
+  <div class="section">
+    <div class="section-header reveal">
+      <span class="section-num">// 01</span>
+      <h2 class="section-title" data-i18n="about_title">Sobre Mim</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <p data-i18n="about_p1">Sou um <strong>Engenheiro de Software Full-Stack</strong> apaixonado por construir sistemas robustos,escaláveis. Minha abordagem une rigor técnico e pensamento analítico para transformar problemas complexos em soluções elegantes.</p>
+        <p data-i18n="about_p2">Tenho expertise em desenvolvimento de ponta a ponta, desde arquitetura em <strong>C e C++</strong>, back-end em <strong>Java</strong>, interfaces com <strong>HTML, CSS e JavaScript</strong>, até painéis estratégicos no <strong>Power BI</strong>.</p>
+        <p data-i18n="about_p3">Atualmente exploro o potencial da <strong>Inteligência Artificial</strong> — integrando modelos de linguagem e soluções avançadas para criar produtos inteligentes que agregam valor real ao negócio.</p>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-card"><span class="skill-icon">⚙️</span><div class="skill-name">C / C++</div><div class="skill-level" data-i18n="skill_advanced">Avançado</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+        <div class="skill-card"><span class="skill-icon">☕</span><div class="skill-name">Java</div><div class="skill-level" data-i18n="skill_advanced">Avançado</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-card"><span class="skill-icon">🌐</span><div class="skill-name">HTML / CSS / JS</div><div class="skill-level" data-i18n="skill_advanced">Avançado</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-card"><span class="skill-icon">📊</span><div class="skill-name">Power BI</div><div class="skill-level" data-i18n="skill_intermediate">Intermediário</div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+        <div class="skill-card"><span class="skill-icon">🤖</span><div class="skill-name">IA / LLM API</div><div class="skill-level" data-i18n="skill_intermediate">Intermediário</div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+        <div class="skill-card"><span class="skill-icon">🏗️</span><div class="skill-name">Software Eng.</div><div class="skill-level" data-i18n="skill_advanced">Avançado</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EDUCATION ══ -->
+<section id="education" class="edu-section">
+  <div class="section">
+    <div class="section-header reveal">
+      <span class="section-num">// 02</span>
+      <h2 class="section-title" data-i18n="edu_title">Formação</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="timeline reveal">
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">2023 — 2027</div>
+          <div class="timeline-degree" data-i18n="edu1_degree">Bacharelado em Ciência da Computação</div>
+          <div class="timeline-school">Universidade Estácio de Sá</div>
+          <div class="timeline-desc" data-i18n="edu1_desc">Previsão de Conclusão: 2027. Anteriormente: Universidade Veiga de Almeida (UVA) — Transferência Acadêmica.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date" data-i18n="edu2_date">Concluído — 28h</div>
+          <div class="timeline-degree" data-i18n="edu2_degree">Java Completo (POO + Projetos)</div>
+          <div class="timeline-school">Udemy</div>
+          <div class="timeline-desc" data-i18n="edu2_desc">Programação orientada a objetos, coleções, generics, tratamento de exceções, JDBC e projetos práticos completos em Java.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date" data-i18n="edu3_date">Em andamento</div>
+          <div class="timeline-degree" data-i18n="edu3_degree">Java Cloud Native</div>
+          <div class="timeline-school">Fundação Bradesco</div>
+          <div class="timeline-desc" data-i18n="edu3_desc">Desenvolvimento de aplicações Java para ambientes cloud, microsserviços, containers e boas práticas de arquitetura nativa em nuvem.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">Concluído</div>
+          <div class="timeline-degree" data-i18n="edu4_degree">Power BI e Excel</div>
+          <div class="timeline-school">EmpowerData / Santander</div>
+          <div class="timeline-desc" data-i18n="edu4_desc">Modelagem de dados, criação de dashboards interativos no Power BI, fórmulas avançadas e análise de dados com Excel.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">Concluído</div>
+          <div class="timeline-degree" data-i18n="edu5_degree">Algoritmos e Lógica de Programação</div>
+          <div class="timeline-school">Udemy</div>
+          <div class="timeline-desc" data-i18n="edu5_desc">Fundamentos de lógica computacional, estruturas de controle, funções, recursão e resolução de problemas com algoritmos eficientes.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">fev. 2026</div>
+          <div class="timeline-degree" data-i18n="edu6_degree">Santander Open Academy — Domine a IA com Gemini</div>
+          <div class="timeline-school">Santander</div>
+          <div class="timeline-desc" data-i18n="edu6_desc">Aplicações práticas de Inteligência Artificial com o modelo Gemini do Google, prompts avançados e integração em fluxos de trabalho.</div>
+        </div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-content">
+          <div class="timeline-date">out. 2025</div>
+          <div class="timeline-degree" data-i18n="edu7_degree">Imersão Dev — Agentes de IA</div>
+          <div class="timeline-school">Google / Alura</div>
+          <div class="timeline-desc" data-i18n="edu7_desc">Desenvolvimento de agentes inteligentes com IA generativa, integração com APIs do Google e construção de soluções orientadas a LLMs.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EXPERIENCE ══ -->
+<section id="experience" class="exp-section">
+  <div class="section">
+    <div class="section-header reveal">
+      <span class="section-num">// 03</span>
+      <h2 class="section-title">Experiência</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="exp-timeline reveal">
+
+      <div class="exp-item">
+        <div class="exp-date">2024</div>
+        <div class="exp-role">Mesário — Eleições 2024</div>
+        <div class="exp-company">Justiça Eleitoral</div>
+        <div class="exp-desc">Atendimento e orientação ao público, registro de informações em sistema eletrônico e organização do fluxo de votação sob alta demanda.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">jun/2023 — jul/2023</div>
+        <div class="exp-role">Recepcionista e Auxiliar Administrativo</div>
+        <div class="exp-company">Technopark Estacionamento LTDA</div>
+        <div class="exp-desc">Atendimento presencial e telefônico ao cliente, registro de informações e emissão de notas fiscais em sistema, além de apoio a rotinas administrativas e controle de dados operacionais.</div>
+      </div>
+
+      <div class="exp-item">
+        <div class="exp-date">2024 — 2025</div>
+        <div class="exp-role">Projetos Acadêmicos em Tecnologia da Informação</div>
+        <div class="exp-company">Universidade Veiga de Almeida</div>
+        <div class="exp-desc">Desenvolvimento de projetos utilizando HTML, CSS, JavaScript e C, aplicando lógica de programação e estruturas de dados. Uso de Figma para prototipação e GitHub para versionamento de código.</div>
+        <a href="https://github.com/Thg1zZ" target="_blank" class="exp-github-link">Ver projetos mais estruturados no GitHub →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROJECTS ══ -->
+<section id="projects" style="border-top:1px solid var(--border)">
+  <div class="section">
+    <div class="section-header reveal">
+      <span class="section-num">// 04</span>
+      <h2 class="section-title" data-i18n="proj_title">Projetos</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card reveal">
+        <div class="project-num">PROJ — 001</div>
+        <div class="project-title" data-i18n="p1_title">Dashboard Executivo — Power BI</div>
+        <div class="project-desc"  data-i18n="p1_desc">Painel estratégico integrado com múltiplas fontes para monitoramento de KPIs em tempo real. DAX avançado, modelagem estrela e publicação automatizada via REST API.</div>
+        <div class="project-tags"><span class="tag">Power BI</span><span class="tag">DAX</span><span class="tag">SQL Server</span><span class="tag">REST API</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">PROJ — 002</div>
+        <div class="project-title" data-i18n="p2_title">Motor de Simulação Física em C++</div>
+        <div class="project-desc"  data-i18n="p2_desc">Engine de partículas com colisões em tempo real, multithreading e SIMD instructions. Renderização OpenGL a 60fps estável.</div>
+        <div class="project-tags"><span class="tag">C++</span><span class="tag">OpenGL</span><span class="tag">Threading</span><span class="tag">SIMD</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">PROJ — 003</div>
+        <div class="project-title" data-i18n="p3_title">Plataforma SaaS Full-Stack</div>
+        <div class="project-desc"  data-i18n="p3_desc">Aplicação web completa com Java Spring Boot, JavaScript vanilla com componentes customizados, autenticação JWT e deploy cloud com CI/CD.</div>
+        <div class="project-tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">JavaScript</span><span class="tag">PostgreSQL</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">PROJ — 004</div>
+        <div class="project-title" data-i18n="p4_title">Assistente Inteligente com LLM API</div>
+        <div class="project-desc"  data-i18n="p4_desc">Integração de API de modelo de linguagem para automação de análise de documentos. Contexto persistente, classificação de intenções e interface conversacional adaptativa.</div>
+        <div class="project-tags"><span class="tag">LLM API</span><span class="tag">IA</span><span class="tag">JavaScript</span><span class="tag">Node.js</span></div>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">PROJ — 005</div>
+        <div class="project-title" data-i18n="p5_title">Sudoku em Java</div>
+        <div class="project-desc"  data-i18n="p5_desc">Jogo de Sudoku desenvolvido como desafio do programa Bradesco Java Cloud Native. Geração de tabuleiro, verificação de jogadas, sistema de dicas e timer, com código modular e boas práticas de POO.</div>
+        <div class="project-tags"><span class="tag">Java</span><span class="tag">POO</span><span class="tag">Estruturas de Dados</span><span class="tag">Lógica</span></div>
+        <a href="https://github.com/Thg1zZ/Game-Sudoku-Bradesco-Java-Cloud-" target="_blank" class="project-link" data-i18n="proj_view_code">Ver no GitHub →</a>
+      </div>
+      <div class="project-card reveal">
+        <div class="project-num">PROJ — 006</div>
+        <div class="project-title" data-i18n="p6_title">Design System &amp; Component Library</div>
+        <div class="project-desc"  data-i18n="p6_desc">Biblioteca de componentes em HTML/CSS/JS puro com tokens de design, tema claro/escuro, WCAG 2.1 AA e documentação interativa.</div>
+        <div class="project-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">WCAG</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CONTACT ══ -->
+<section id="contact" class="contact-section">
+  <div class="section">
+    <div class="section-header reveal">
+      <span class="section-num">// 05</span>
+      <h2 class="section-title" data-i18n="contact_title">Contato</h2>
+      <span class="section-line"></span>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <p class="contact-info" style="font-size:1rem;color:var(--text2);line-height:1.9;margin-bottom:2rem;font-weight:300" data-i18n="contact_desc">Estou aberto a novas oportunidades, projetos freelance e colaborações. Se você tem um problema interessante para resolver, vamos conversar.</p>
+        <div class="contact-links">
+          <a href="https://www.linkedin.com/in/thiago-gomes-fc/" target="_blank" class="contact-link">
+            <img class="contact-link-icon" data-icon="linkedin" src="icon/dark/linkedin.svg" alt="LinkedIn"><span class="contact-link-label">LinkedIn</span><span class="contact-link-arrow">→</span>
+          </a>
+          <a href="https://github.com/Thg1zZ" target="_blank" class="contact-link">
+            <img class="contact-link-icon" data-icon="github" src="icon/dark/github.svg" alt="GitHub"><span class="contact-link-label">GitHub</span><span class="contact-link-arrow">→</span>
+          </a>
+          <a href="assets/Curriculo_Thiago_Gomes_Final_Unica_Pagina.pdf" target="_blank" class="contact-link">
+            <img class="contact-link-icon" data-icon="curriculum" src="icon/dark/curriculum.svg" alt="Currículo"><span class="contact-link-label" data-i18n="cv_link">Currículo / CV</span><span class="contact-link-arrow">↓</span>
+          </a>
+          <a href="mailto:thiagogomes1337@gmail.com" class="contact-link">
+            <img class="contact-link-icon" data-icon="email" src="icon/dark/email.svg" alt="E-mail"><span class="contact-link-label">thiagogomes1337@gmail.com</span><span class="contact-link-arrow">→</span>
+          </a>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_name">Nome</label>
+          <input type="text" id="form-name" class="form-input" data-i18n-placeholder="form_name_ph" placeholder="Seu nome completo">
+        </div>
+        <div class="form-group">
+          <label class="form-label">E-mail</label>
+          <input type="email" id="form-email" class="form-input" data-i18n-placeholder="form_email_ph" placeholder="seu@email.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_subject">Assunto</label>
+          <input type="text" id="form-subject" class="form-input" data-i18n-placeholder="form_subject_ph" placeholder="Assunto da mensagem">
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="form_msg">Mensagem</label>
+          <textarea id="form-message" class="form-textarea" data-i18n-placeholder="form_msg_ph" placeholder="Descreva seu projeto ou oportunidade..."></textarea>
+        </div>
+        <button class="btn-primary" onclick="sendForm()" data-i18n="form_btn">Enviar Mensagem</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-copy">© 2025 <span>Thiago Gomes</span></div>
+  <div class="footer-copy" style="font-size:.67rem">HTML · CSS · JS</div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
