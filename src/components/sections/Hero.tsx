@@ -68,7 +68,7 @@ export function Hero() {
           preload="auto"
           className="w-full h-full object-cover object-[60%_center]"
         >
-          <source src="/assets/bgvideo.mp4" type="video/mp4" />
+          <source src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/bgvideo.mp4`} type="video/mp4" />
         </video>
 
         {/* Overlays for readability */}

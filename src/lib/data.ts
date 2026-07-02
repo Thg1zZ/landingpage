@@ -15,7 +15,7 @@ export const personalInfo = {
   github: "https://github.com/Thg1zZ",
   whatsapp: "https://wa.me/5521980635807", // To integrate your WhatsApp: Change this URL to https://wa.me/55 + your area code + your phone number
   whatsappDisplay: "+55 (21) 98063-5807", // Change this to your display phone number
-  cvUrl: "/assets/Curriculo_Thiago_Gomes_Final_Unica_Pagina.pdf",
+  cvUrl: `${process.env.NEXT_PUBLIC_BASE_PATH || ""}/assets/Curriculo_Thiago_Gomes_Final_Unica_Pagina.pdf`,
   available: true,
   stats: [
     { value: "3+", label: { pt: "Anos de Exp.", en: "Years of Exp." } },
