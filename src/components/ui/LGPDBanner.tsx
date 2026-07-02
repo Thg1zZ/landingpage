@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Shield } from "lucide-react";
+
 import { useLanguageTheme } from "@/context/LanguageThemeContext";
 
 declare global {

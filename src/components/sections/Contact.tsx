@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/ui/Animations";
 import { personalInfo } from "@/lib/data";
-import { Send, FileDown, AlertCircle, Loader2, Mail, ArrowUpRight, ChevronDown, ChevronUp, MessageSquare } from "lucide-react";
+import { Send, FileDown, AlertCircle, Loader2, Mail, ArrowUpRight, ChevronDown, ChevronUp } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
 import emailjs from "@emailjs/browser";
 import { useLanguageTheme } from "@/context/LanguageThemeContext";
@@ -109,7 +109,7 @@ export function Contact() {
         {/* Section Header */}
         <FadeIn className="flex items-center gap-4 mb-16">
           <span className="font-[family-name:var(--font-jetbrains)] text-xs text-accent tracking-[0.2em] uppercase">
-            // 05
+            {"// 05"}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-jetbrains)] text-text">
             {t("contact_title")}

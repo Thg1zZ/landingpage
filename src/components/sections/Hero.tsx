@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown, FileDown, ArrowRight } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";

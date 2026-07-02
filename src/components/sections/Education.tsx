@@ -39,7 +39,7 @@ export function Education() {
         {/* Section Header */}
         <FadeIn className="flex items-center gap-4 mb-16">
           <span className="font-[family-name:var(--font-jetbrains)] text-xs text-accent tracking-[0.2em] uppercase">
-            // 02
+            {"// 02"}
           </span>
           <h2 className="text-3xl md:text-4xl font-bold font-[family-name:var(--font-jetbrains)] text-text">
             {t("edu_title")}

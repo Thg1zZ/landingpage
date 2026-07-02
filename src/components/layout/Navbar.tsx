@@ -62,7 +62,7 @@ export function Navbar() {
           data-cursor-text="home"
           className="font-[family-name:var(--font-jetbrains)] text-sm text-[#4a9eff] tracking-wider cursor-pointer hover:opacity-80 transition-opacity whitespace-nowrap flex-shrink-0"
         >
-          <span className="text-[#9aabcc]">//</span> TG<span className="text-[#9aabcc]">.dev</span>
+          <span className="text-[#9aabcc]">{"//"}</span> TG<span className="text-[#9aabcc]">.dev</span>
         </Link>
 
         {/* Vertical divider */}
