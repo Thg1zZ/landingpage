@@ -1,0 +1,222 @@
+@import "tailwindcss";
+
+:root {
+  --color-bg: #0a0c10;
+  --color-bg-2: #0f1218;
+  --color-bg-3: #161b25;
+  --color-surface: #1a2035;
+  --color-surface-2: #1f2840;
+  --color-border: rgba(42, 53, 80, 0.7);
+  --color-accent: #4a9eff;
+  --color-accent-2: #00d4aa;
+  --color-accent-3: #ff6b35;
+  --color-text: #e8edf5;
+  --color-text-2: #9aabcc;
+  --color-text-3: #5a6e8c;
+  --color-glow: rgba(74, 158, 255, 0.15);
+}
+
+.light, [data-theme="light"] {
+  --color-bg: #f0f4fa;
+  --color-bg-2: #e8edf7;
+  --color-bg-3: #dce4f0;
+  --color-surface: #ffffff;
+  --color-surface-2: #f5f8ff;
+  --color-border: #c8d4e8;
+  --color-accent: #1a6fd4;
+  --color-accent-2: #00a882;
+  --color-accent-3: #d94f1a;
+  --color-text: #0f1829;
+  --color-text-2: #3a4f6e;
+  --color-text-3: #7a8fa8;
+  --color-glow: rgba(26, 111, 212, 0.08);
+}
+
+@theme {
+  --font-mono: "JetBrains Mono", "IBM Plex Mono", monospace;
+  --font-sans: "IBM Plex Sans", "Inter", sans-serif;
+  --font-serif: var(--font-cormorant), serif;
+
+  --color-bg: var(--color-bg);
+  --color-bg-2: var(--color-bg-2);
+  --color-bg-3: var(--color-bg-3);
+  --color-surface: var(--color-surface);
+  --color-surface-2: var(--color-surface-2);
+  --color-border: var(--color-border);
+  --color-accent: var(--color-accent);
+  --color-accent-2: var(--color-accent-2);
+  --color-accent-3: var(--color-accent-3);
+  --color-text: var(--color-text);
+  --color-text-2: var(--color-text-2);
+  --color-text-3: var(--color-text-3);
+  --color-glow: var(--color-glow);
+}
+
+html {
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: "IBM Plex Sans", "Inter", sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+::selection {
+  background: rgba(74, 158, 255, 0.3);
+  color: var(--color-text);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+/* Glass effect utility */
+.glass {
+  background: rgba(26, 32, 53, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
+.light .glass, [data-theme="light"] .glass {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-border);
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-accent) 0%, var(--color-accent-2) 50%, var(--color-accent) 100%);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientX 6s ease infinite;
+}
+
+@keyframes gradientX {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Premium Glassmorphism */
+.glass-premium {
+  background: rgba(10, 15, 25, 0.45);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4), inset 0 1px 1px 0 rgba(255, 255, 255, 0.05);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.light .glass-premium, [data-theme="light"] .glass-premium {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(26, 111, 212, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05), inset 0 1px 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.glass-premium:hover {
+  border-color: rgba(74, 158, 255, 0.2);
+  box-shadow: 0 12px 40px 0 rgba(74, 158, 255, 0.1), inset 0 1px 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* Aurora background floating blobs */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(40px, -50px) scale(1.1); }
+  66% { transform: translate(-30px, 30px) scale(0.95); }
+}
+
+@keyframes float-medium {
+  0%, 100% { transform: translate(0px, 0px) scale(1); }
+  50% { transform: translate(-50px, 40px) scale(1.12); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 35s linear infinite;
+}
+
+.group:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+.animate-float-slow {
+  animation: float-slow 22s infinite ease-in-out;
+}
+
+.animate-float-medium {
+  animation: float-medium 16s infinite ease-in-out;
+}
+
+/* Glow effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(74, 158, 255, 0.25), 0 0 40px rgba(74, 158, 255, 0.1);
+}
+.glow-teal {
+  box-shadow: 0 0 20px rgba(0, 212, 170, 0.25), 0 0 40px rgba(0, 212, 170, 0.1);
+}
+
+/* Skill bar animation */
+.skill-fill {
+  transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Noise texture overlay for depth */
+.noise::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+/* Custom styles for language and theme control buttons */
+.btn-ctrl {
+  background: rgba(26, 32, 53, 0.8);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-2);
+  padding: 0.38rem 0.85rem;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+}
+
+.light .btn-ctrl, [data-theme="light"] .btn-ctrl {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.btn-ctrl:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
