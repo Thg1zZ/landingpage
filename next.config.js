@@ -4,6 +4,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: process.env.GITHUB_ACTIONS ? "/landingpage" : "",
 };
 
-export default nextConfig;
+module.exports = nextConfig;
