@@ -9,15 +9,19 @@ import { Contact } from "@/components/sections/Contact";
 
 export default function Home() {
   return (
-    <main>
+    <>
+      {/* Navbar is OUTSIDE the overflow wrapper so position:fixed works correctly on mobile */}
       <Navbar />
-      <Hero />
-      <About />
-      <Education />
-      <Experience />
-      <Projects />
-      <Contact />
-      <Footer />
-    </main>
+      {/* overflow-x:hidden is on this wrapper, NOT on body, to prevent breaking fixed elements */}
+      <main style={{ overflowX: "hidden" }}>
+        <Hero />
+        <About />
+        <Education />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
+    </>
   );
 }

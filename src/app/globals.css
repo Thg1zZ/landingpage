@@ -61,7 +61,10 @@ body {
   background-color: var(--color-bg);
   color: var(--color-text);
   font-family: "IBM Plex Sans", "Inter", sans-serif;
-  overflow-x: hidden;
+  /* NOTE: overflow-x:hidden is intentionally NOT set on body.
+     Setting it here breaks position:fixed children on mobile browsers
+     by creating a containing block that clips fixed elements.
+     The overflow is handled on the #scroll-wrapper div instead. */
   transition: background-color 0.3s, color 0.3s;
 }
 

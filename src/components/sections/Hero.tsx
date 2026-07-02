@@ -56,7 +56,7 @@ export function Hero() {
       ref={sectionRef}
       id="home"
       onMouseMove={handleSectionMouseMove}
-      className="relative min-h-screen flex items-end overflow-hidden"
+      className="relative min-h-screen flex items-end"
     >
       {/* Video background */}
       <div className="absolute inset-0 z-0">
