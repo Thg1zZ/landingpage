@@ -52,7 +52,7 @@ export function Navbar() {
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, ease: "easeOut" }}
-        className={`pointer-events-auto mt-4 md:mt-6 px-5 md:px-8 py-3 rounded-full border bg-[rgba(10,15,25,0.72)] backdrop-blur-xl flex items-center justify-between shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-all duration-300 w-fit max-w-[95vw] gap-5 md:gap-7 relative overflow-hidden ${
+        className={`pointer-events-auto mt-4 md:mt-6 px-5 md:px-8 py-3 rounded-full border bg-[rgba(10,15,25,0.72)] backdrop-blur-xl flex items-center justify-between shadow-[0_12px_40px_rgba(0,0,0,0.35)] transition-all duration-300 w-[92%] md:w-fit gap-5 md:gap-7 relative overflow-hidden ${
           scrolled ? "border-accent/20 bg-[rgba(6,9,16,0.85)] scale-[0.98]" : "border-border/30"
         }`}
       >
@@ -142,17 +142,17 @@ export function Navbar() {
             <>
               <button
                 onClick={toggleLang}
-                className="cursor-pointer text-[10px] font-[family-name:var(--font-jetbrains)] font-bold text-[#9aabcc] hover:text-accent w-7 h-7 rounded-full hover:bg-bg-3/50 flex items-center justify-center transition-colors"
+                className="cursor-pointer text-xs font-[family-name:var(--font-jetbrains)] font-bold text-[#9aabcc] hover:text-accent w-8 h-8 rounded-full hover:bg-bg-3/50 flex items-center justify-center transition-colors"
                 aria-label="Mudar idioma"
               >
                 {lang === "pt" ? "EN" : "PT"}
               </button>
               <button
                 onClick={toggleTheme}
-                className="cursor-pointer text-[#9aabcc] hover:text-accent w-7 h-7 rounded-full hover:bg-bg-3/50 flex items-center justify-center transition-colors"
+                className="cursor-pointer text-[#9aabcc] hover:text-accent w-8 h-8 rounded-full hover:bg-bg-3/50 flex items-center justify-center transition-colors"
                 aria-label="Mudar tema"
               >
-                {theme === "dark" ? <Sun size={13} /> : <Moon size={13} />}
+                {theme === "dark" ? <Sun size={14} /> : <Moon size={14} />}
               </button>
             </>
           )}
@@ -183,7 +183,7 @@ export function Navbar() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: -20 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="md:hidden pointer-events-auto w-[90%] mx-auto mt-2 bg-[rgba(10,15,25,0.92)] backdrop-blur-2xl border border-border/40 px-6 py-6 rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.5)] flex flex-col gap-6"
+            className="md:hidden pointer-events-auto w-[92%] mx-auto mt-2 bg-[rgba(10,15,25,0.92)] backdrop-blur-2xl border border-border/40 px-6 py-6 rounded-2xl shadow-[0_16px_48px_rgba(0,0,0,0.5)] flex flex-col gap-6"
           >
             <ul className="flex flex-col gap-3.5">
               {navLinks.map((link) => {

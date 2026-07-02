@@ -112,8 +112,8 @@ export function Hero() {
               </span>
             </motion.div>
 
-            <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold text-[#e8edf5] leading-none tracking-tight mb-3 font-[family-name:var(--font-jetbrains)]">
-              <span className="inline-block mr-3">
+            <h1 className="text-5xl md:text-6xl xl:text-7xl font-bold text-[#e8edf5] leading-none tracking-tight mb-3 font-[family-name:var(--font-jetbrains)] flex flex-wrap">
+              <span className="inline-block mr-3 whitespace-nowrap">
                 {"Thiago".split("").map((char, index) => (
                   <motion.span
                     key={index}
@@ -130,7 +130,7 @@ export function Hero() {
                   </motion.span>
                 ))}
               </span>
-              <span className="gradient-text inline-block">
+              <span className="gradient-text inline-block whitespace-nowrap">
                 {"Gomes".split("").map((char, index) => (
                   <motion.span
                     key={index}
