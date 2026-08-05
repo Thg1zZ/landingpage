@@ -27,9 +27,13 @@ const modalTranslations = {
     s5_text: "Os dados não são vendidos, alugados ou compartilhados com terceiros para fins comerciais. O serviço de envio de e-mail é processado pelo EmailJS, que possui sua própria Política de Privacidade disponível em emailjs.com.",
     s6_title: "6. Cookies",
     s6_text: "Este site utiliza cookies essenciais apenas para salvar suas preferências de tema e idioma. Nenhum cookie de rastreamento ou publicidade é utilizado.",
-    s7_title: "7. Direitos do Titular (Art. 18, LGPD)",
-    s7_intro: "Nos termos da LGPD, você tem direito a:",
-    s7_rights: [
+    s7_title: "7. Retenção de Dados",
+    s7_text: "Os dados do formulário de contato são armazenados apenas pelo tempo necessário para responder à solicitação. Preferências de tema e idioma são armazenadas localmente no seu navegador via localStorage, sem acesso por servidores externos. Não há retenção de dados além do prazo necessário.",
+    s8_title: "8. Segurança",
+    s8_text: "Adotamos medidas técnicas adequadas para proteger seus dados contra acesso não autorizado, perda ou divulgação indevida. Toda a comunicação entre o seu navegador e este site é realizada via HTTPS (protocolo seguro com criptografia TLS).",
+    s9_title: "9. Direitos do Titular (Art. 18, LGPD)",
+    s9_intro: "Nos termos da LGPD, você tem direito a:",
+    s9_rights: [
       "Confirmar a existência de tratamento de seus dados;",
       "Acessar os dados pessoais tratados;",
       "Solicitar a correção de dados incompletos ou inexatos;",
@@ -37,8 +41,8 @@ const modalTranslations = {
       "Revogar o consentimento a qualquer momento;",
       "Apresentar reclamação à ANPD (Autoridade Nacional de Proteção de Dados).",
     ],
-    s7_contact: "Para exercer seus direitos: thiagogomes1337@gmail.com",
-    footer_note: "Em caso de dúvidas, entre em contato com o controlador pelo e-mail indicado acima. Última atualização: Julho de 2025.",
+    s9_contact: "Para exercer seus direitos: thiagogomes1337@gmail.com",
+    footer_note: "Em caso de dúvidas, entre em contato com o controlador pelo e-mail indicado acima. Última atualização: Agosto de 2025.",
   },
   en: {
     title: "Privacy Policy",
@@ -55,9 +59,13 @@ const modalTranslations = {
     s5_text: "Data is not sold, rented or shared with third parties for commercial purposes. The e-mail sending service is processed by EmailJS, acting as a data processor, with its own Privacy Policy available at emailjs.com.",
     s6_title: "6. Cookies",
     s6_text: "This website uses essential cookies only to save your theme (dark/light) and language (PT/EN) preferences. No tracking or advertising cookies are used.",
-    s7_title: "7. Data Subject Rights (Art. 18, LGPD)",
-    s7_intro: "Under the LGPD, you have the right to:",
-    s7_rights: [
+    s7_title: "7. Data Retention",
+    s7_text: "Contact form data is stored only for the time necessary to respond to the request. Theme and language preferences are stored locally in your browser via localStorage, with no access by external servers. No data is retained beyond the necessary period.",
+    s8_title: "8. Security",
+    s8_text: "We adopt adequate technical measures to protect your data against unauthorized access, loss, or improper disclosure. All communication between your browser and this website is carried out via HTTPS (secure protocol with TLS encryption).",
+    s9_title: "9. Data Subject Rights (Art. 18, LGPD)",
+    s9_intro: "Under the LGPD, you have the right to:",
+    s9_rights: [
       "Confirm the existence of processing of your data;",
       "Access your processed personal data;",
       "Request correction of incomplete or inaccurate data;",
@@ -65,8 +73,8 @@ const modalTranslations = {
       "Revoke consent at any time;",
       "Lodge a complaint with the ANPD (Brazilian National Data Protection Authority).",
     ],
-    s7_contact: "To exercise your rights: thiagogomes1337@gmail.com",
-    footer_note: "If you have any questions, please contact the controller at the e-mail address indicated above. Last updated: July 2025.",
+    s9_contact: "To exercise your rights: thiagogomes1337@gmail.com",
+    footer_note: "If you have any questions, please contact the controller at the e-mail address indicated above. Last updated: August 2025.",
   },
 };
 
@@ -183,9 +191,17 @@ export function PrivacyModal() {
               </Section>
 
               <Section title={tLocal.s7_title}>
-                <p className="mb-2">{tLocal.s7_intro}</p>
+                {tLocal.s7_text}
+              </Section>
+
+              <Section title={tLocal.s8_title}>
+                {tLocal.s8_text}
+              </Section>
+
+              <Section title={tLocal.s9_title}>
+                <p className="mb-2">{tLocal.s9_intro}</p>
                 <ul className="space-y-1 pl-4">
-                  {tLocal.s7_rights.map((item, i) => (
+                  {tLocal.s9_rights.map((item, i) => (
                     <li key={i} className="flex gap-2">
                       <span className="text-accent font-bold flex-shrink-0">›</span>
                       <span>{item}</span>
@@ -193,7 +209,7 @@ export function PrivacyModal() {
                   ))}
                 </ul>
                 <p className="mt-3">
-                  {tLocal.s7_contact.split("thiagogomes1337@gmail.com")[0]}
+                  {tLocal.s9_contact.split("thiagogomes1337@gmail.com")[0]}
                   <a href="mailto:thiagogomes1337@gmail.com" className="text-accent hover:text-accent-2 underline transition-colors">
                     thiagogomes1337@gmail.com
                   </a>
