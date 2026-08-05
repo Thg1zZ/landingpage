@@ -196,4 +196,18 @@ export const projects = [
     status: null,
     link: "https://github.com/Thg1zZ/FocusBlock",
   },
+  {
+    num: "006",
+    title: {
+      pt: "Portal ENEN — Executiva Nacional dos Estudantes de Nutrição",
+      en: "ENEN Portal — National Executive of Nutrition Students"
+    },
+    description: {
+      pt: "Plataforma web integrada ao Sanity.io (Headless CMS) para gerenciamento dinâmico de notícias, eventos e documentos. Desenvolvida com HTML5 semântico, CSS3 modular (Custom Properties) e JavaScript (ES2022+), com regras rígidas de segurança contra XSS, Content Security Policy (CSP), tratamento robusto de erros via Fetch API e padrão Clean Code.",
+      en: "Web platform integrated with Sanity.io (Headless CMS) for dynamic news, events, and document management. Built with semantic HTML5, modular CSS3 (Custom Properties), and modular JavaScript (ES2022+), featuring strict XSS security, Content Security Policy (CSP), robust Fetch API error handling, and Clean Code standards."
+    },
+    tags: ["HTML5", "CSS3", "JavaScript (ES2022+)", "Sanity.io", "Headless CMS", "CSP / XSS Security", "Fetch API"],
+    status: null,
+    link: "https://github.com/Thg1zZ/executiva-nacional-dos-estudantes-de-nutricaoenen",
+  },
 ];
