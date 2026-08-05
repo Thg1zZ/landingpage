@@ -4,7 +4,6 @@ import "./globals.css";
 import { LGPDBanner } from "../components/ui/LGPDBanner";
 import { PrivacyModal } from "../components/ui/PrivacyModal";
 import { LanguageThemeProvider } from "../context/LanguageThemeContext";
-import { CustomCursor } from "../components/ui/CustomCursor";
 
 const ibmPlexSans = IBM_Plex_Sans({
   subsets: ["latin"],
@@ -72,7 +71,6 @@ export default function RootLayout({
         </div>
 
         <LanguageThemeProvider>
-          <CustomCursor />
           {children}
           <LGPDBanner />
           <PrivacyModal />
