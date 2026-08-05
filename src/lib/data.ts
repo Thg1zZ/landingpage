@@ -149,7 +149,7 @@ export const projects = [
       en: "High-performance vehicle rental platform. Layered architecture, Defense in Depth security, stateless JWT, RBAC, AES-256, and Redis rate limiting. Vanilla JS frontend with Chart.js."
     },
     tags: ["Java 21", "Spring Boot 3", "Spring Security", "PostgreSQL", "Redis", "Docker", "Vanilla JS"],
-    status: { pt: "🛠️ Em desenvolvimento ativo", en: "🛠️ In active development" },
+    status: null,
     link: null,
   },
   {
@@ -207,7 +207,7 @@ export const projects = [
       en: "Web platform integrated with Sanity.io (Headless CMS) for dynamic news, events, and document management. Built with semantic HTML5, modular CSS3 (Custom Properties), and modular JavaScript (ES2022+), featuring strict XSS security, Content Security Policy (CSP), robust Fetch API error handling, and Clean Code standards."
     },
     tags: ["HTML5", "CSS3", "JavaScript (ES2022+)", "Sanity.io", "Headless CMS", "CSP / XSS Security", "Fetch API"],
-    status: null,
+    status: { pt: "🛠️ Em desenvolvimento ativo", en: "🛠️ In active development" },
     link: "https://github.com/Thg1zZ/executiva-nacional-dos-estudantes-de-nutricaoenen",
   },
 ];
